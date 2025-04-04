@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Randka?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    #question {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #noBtn {
+      position: absolute;
+      transition: top 0.3s, left 0.3s;
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 26px;
+      color: #e91e63;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="question">Czy pójdziesz ze mną na randkę?</div>
+  <button class="btn" onclick="sayYes()">Tak</button>
+  <button class="btn" id="noBtn" onmouseover="moveNo()">Nie</button>
+
+  <div id="message"></div>
+
+  <script>
+    function sayYes() {
+      document.getElementById('message').innerText = 'Cudownie 🩷';
+    }
+
+    function moveNo() {
+      const btn = document.getElementById('noBtn');
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 50));
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
+    }
+  </script>
+
+</body>
+</html>
